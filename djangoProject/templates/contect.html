@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Contect Us{% endblock title %}
+{% block body %}
+<div class="container">
+<h1 class="">Contect Us</h1>
+<form method="post" action="/contect">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="name" class="form-control" name="name" id="name" aria-describedby="name" placeholder="Enter Your Name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Enter Your Email">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone No</label>
+      <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="phone" placeholder="Enter Your Phone No">
+    </div>
+    <div class="form-group">
+      <label for="msg">Message</label>
+      <textarea type="text" class="form-control" name="msg" id="msg" aria-describedby="msg" placeholder="Enter Your Message Here"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}

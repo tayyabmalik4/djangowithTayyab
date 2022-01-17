@@ -1,0 +1,58 @@
+install python
+install django using pip
+	pip install django
+create project
+	django-admin startproject projectname
+create app in the project
+	go to project directry than write this command
+	python manage.py startapp appname
+include the app urls in to the project urls using import include funciton
+than we go to the setting and include the app name in the app file
+than we include the view path in the app urls
+than we go to the views.py and create functions and using HttpResponse we show the data
+than we create a template file and also static file 
+than include the path of template and static in the project setting
+in the static folder we create these files and images which we show openly. and static files access everyone
+than go to the template and create html css javascript files
+and than render these files in the views.py functions
+
+than if we work with the database we write these commands for checking the database changing
+	python manage.py makemigrations
+	python manage.py migrate
+if we want to create admin panel of sqlLite3(django default)
+commad to create admin panel
+	python manage.py createsuperuser
+	username: name
+	email: email
+	password: password
+
+Creating Templates structure
+	we create template structure for easy to write code
+	create base file which we write this code which we write all the files and all the pages
+	we use this command to inherrit the template
+		{% extend 'base.html' %}
+	and also this command use which we inherit the code.
+	{% block title %}Contect Us{% endblock title %}
+	{% block body %}this is the Contect us body{% endblock body %}
+For Creating the database:
+	First of all we create account
+	than we create a class in the model.py ex. 
+	class Contact(models.Model):
+		write filledes which we need.
+	than go to the admin.py and import this file ex.
+		from blog.models import Contact
+		admin.site.register(Contact)
+	than go to the app.py and copy the class BlogConfig
+	than go to setting in the project and add the new app:
+		'blog.app.BlogConfig',
+	than write the two commands:
+		python manage.py makemigrations
+		python manage.py migrate
+go to the Contact view and create condition 
+import modele class than write code
+	if the request.method == "POST":
+	than write some piece of code and save the contact
+	
+makemigrations: create changes and store in a file
+migrate: apply the pending changes created by makemigrations
+		 

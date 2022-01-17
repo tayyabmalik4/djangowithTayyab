@@ -1,0 +1,2 @@
+In the static files we just take who data which we provide for examples images and source code etc.
+ it and we don't save the very sensitive data in this directry.
